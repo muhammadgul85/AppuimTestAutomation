@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="5" passed="5">
+  <reporter-output>
+  </reporter-output>
+  <suite name="practiceAppium.firstTestCase" duration-ms="28164" started-at="2022-12-01T16:33:12 GMT" finished-at="2022-12-01T16:33:41 GMT">
+    <groups>
+    </groups>
+    <test name="Command line test" duration-ms="28164" started-at="2022-12-01T16:33:12 GMT" finished-at="2022-12-01T16:33:41 GMT">
+      <class name="practiceAppium.firstTestCase">
+        <test-method status="PASS" signature="androidSetUp()[pri:0, instance:practiceAppium.firstTestCase@370736d9]" name="androidSetUp" is-config="true" duration-ms="17628" started-at="2022-12-01T16:33:12 GMT" finished-at="2022-12-01T16:33:30 GMT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- androidSetUp -->
+        <test-method status="PASS" signature="verifyPageHeader()[pri:0, instance:practiceAppium.firstTestCase@370736d9]" name="verifyPageHeader" duration-ms="960" started-at="2022-12-01T16:33:30 GMT" finished-at="2022-12-01T16:33:31 GMT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyPageHeader -->
+        <test-method status="PASS" signature="loopThroughAllElement()[pri:0, instance:practiceAppium.firstTestCase@370736d9]" name="loopThroughAllElement" duration-ms="632" started-at="2022-12-01T16:33:31 GMT" depends-on-methods="practiceAppium.firstTestCase.verifyPageHeader" finished-at="2022-12-01T16:33:32 GMT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loopThroughAllElement -->
+        <test-method status="PASS" signature="clickOnMediaAndPrintList()[pri:0, instance:practiceAppium.firstTestCase@370736d9]" name="clickOnMediaAndPrintList" duration-ms="1352" started-at="2022-12-01T16:33:32 GMT" depends-on-methods="practiceAppium.firstTestCase.loopThroughAllElement" finished-at="2022-12-01T16:33:33 GMT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clickOnMediaAndPrintList -->
+        <test-method status="PASS" signature="clickOnAnimationAndNavigate()[pri:0, instance:practiceAppium.firstTestCase@370736d9]" name="clickOnAnimationAndNavigate" duration-ms="3019" started-at="2022-12-01T16:33:33 GMT" depends-on-methods="practiceAppium.firstTestCase.clickOnMediaAndPrintList" finished-at="2022-12-01T16:33:36 GMT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clickOnAnimationAndNavigate -->
+        <test-method status="PASS" signature="clickOnAppAndScrollDown()[pri:0, instance:practiceAppium.firstTestCase@370736d9]" name="clickOnAppAndScrollDown" duration-ms="3645" started-at="2022-12-01T16:33:36 GMT" depends-on-methods="practiceAppium.firstTestCase.clickOnAnimationAndNavigate" finished-at="2022-12-01T16:33:40 GMT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clickOnAppAndScrollDown -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:practiceAppium.firstTestCase@370736d9]" name="tearDown" is-config="true" duration-ms="839" started-at="2022-12-01T16:33:40 GMT" finished-at="2022-12-01T16:33:41 GMT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- practiceAppium.firstTestCase -->
+    </test> <!-- Command line test -->
+  </suite> <!-- practiceAppium.firstTestCase -->
+</testng-results>
