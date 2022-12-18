@@ -1,12 +1,16 @@
 package practiceAppium;
 
+import io.appium.java_client.AppiumBy;
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.appmanagement.AndroidInstallApplicationOptions;
+import io.appium.java_client.pagefactory.AndroidBy;
+import io.appium.java_client.pagefactory.AndroidFindBy;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -23,6 +27,7 @@ public class AmazonAppTesting {
 
 
     AndroidDriver driver;
+
 
     @BeforeClass
     public void androidSetUp() throws MalformedURLException {
@@ -45,10 +50,12 @@ public class AmazonAppTesting {
         // double backslash for windows or single slash for iOS will be replaced by File Separator
     }
 
+
     @BeforeMethod
     public void skipSignInToAccountAndCookieHandle() {
         try {
-            WebElement skipSignIn = driver.findElement(By.xpath("//android.widget.Button[@resource-id='com.amazon.mShop.android.shopping:id/skip_sign_in_button']"));
+            //WebElement skipSignIn = driver.findElement(By.xpath("//android.widget.Button[@resource-id='com.amazon.mShop.android.shopping:id/skip_sign_in_button']"));
+            WebElement skipSignIn =driver.findElement(MobileBy.xpath("//android.widget.Button[@resource-id='com.amazon.mShop.android.shopping:id/skip_sign_in_button']"));
             if (skipSignIn.isDisplayed()) {
                 skipSignIn.click();
                 System.out.println("Skip Sign in was present and clicked");
