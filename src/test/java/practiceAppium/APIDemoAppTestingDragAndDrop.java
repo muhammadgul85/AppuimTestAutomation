@@ -97,7 +97,7 @@ public class APIDemoAppTestingDragAndDrop {
      */
     @Test(dependsOnMethods = {"verifyPageHeader"})
 
-    public void swipeDown() {
+    public void scrollDown() {
         boolean canScrollMore=true;
 
         System.out.println("click on Views");
