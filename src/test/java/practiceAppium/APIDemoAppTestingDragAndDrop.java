@@ -125,6 +125,7 @@ public class APIDemoAppTestingDragAndDrop {
     }
 
 // This is sample only
+    //2nd sample
 
     @AfterClass
     public void tearDown()
