@@ -1,6 +1,7 @@
 package practiceAppium;
 
 import com.google.common.collect.ImmutableMap;
+import io.appium.java_client.AppiumBy;
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.By;
@@ -61,11 +62,10 @@ public class APIDemoAppTestingDragAndDrop {
         System.out.println("Page Header is: "+ titleOfPage);
 
     }
+    /*
     @Test(dependsOnMethods = {"verifyPageHeader"})
     public void longClick()
     {
-
-
         System.out.println("click on Views");
         driver.findElement(By.xpath("//android.widget.TextView[@content-desc=\"Views\"]")).click();
         System.out.println("Click on Drag and Drop");
@@ -92,6 +92,36 @@ public class APIDemoAppTestingDragAndDrop {
         WebElement firstRedDot = driver.findElement(By.id("io.appium.android.apis:id/drag_dot_1"));
         System.out.println("dragging from point A to D");
         driver.executeScript("mobile: dragGesture", ImmutableMap.of("elementId",((RemoteWebElement)firstRedDot).getId(),"endX",486, "endY", 733));
+    }
+
+     */
+    @Test(dependsOnMethods = {"verifyPageHeader"})
+
+    public void swipeDown() {
+        boolean canScrollMore=true;
+
+        System.out.println("click on Views");
+        driver.findElement(By.xpath("//android.widget.TextView[@content-desc=\"Views\"]")).click();
+        System.out.println("scrolling list");
+        //WebElement viewList = driver.findElement(AppiumBy.id("android:id/list"));
+        WebElement animation = driver.findElement(AppiumBy.xpath("//android.widget.TextView[@content-desc=\"Animation\"]"));
+        if (animation.isDisplayed()) { //find the animation = this will be true
+            System.out.println("animation is displayed so we don't want to scroll more");
+            canScrollMore = false; // we are re-assigning value to canScrollMore as false as it was true in line 101,
+            //now the while loop will not be executed as that would have been executed if condition was true
+        }
+        while (canScrollMore) {
+            System.out.println("scolling down");
+            canScrollMore = (Boolean) (driver.executeScript("mobile: scrollGesture", ImmutableMap.of(
+                    "left", 100, "top", 100, "width", 700, "height", 700,
+                    "elementId", ((RemoteWebElement) animation).getId(), //Scroll till this element
+                    "direction", "down",
+                    "percent", 1.0
+            )));
+            //return canScrollMore;
+            System.out.println("can we scroll more: ?" + canScrollMore); //  with this use     public void swipeDown() method
+
+        }
     }
 
 
