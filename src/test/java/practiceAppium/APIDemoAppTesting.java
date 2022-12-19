@@ -23,7 +23,7 @@ import java.util.List;
 
 public class APIDemoAppTesting {
 
-//test1
+//test1, please add or remove the stuff .. This is for test only text to update the local repo from master
     AndroidDriver driver;
 
     @BeforeClass
