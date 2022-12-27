@@ -94,7 +94,7 @@ public class APIDemoAppTestingDragAndDrop {
         driver.executeScript("mobile: dragGesture", ImmutableMap.of("elementId",((RemoteWebElement)firstRedDot).getId(),"endX",486, "endY", 733));
     }
 
-     */
+
     @Test(dependsOnMethods = {"verifyPageHeader"})
 
     public void scrollDown() {
@@ -124,8 +124,66 @@ public class APIDemoAppTestingDragAndDrop {
         }
     }
 
-// This is sample only
-    //2nd sample
+    @Test (dependsOnMethods = {"verifyPageHeader"})
+    public void swipeUpAndDown()
+    {
+        System.out.println("click on Views");
+        driver.findElement(By.xpath("//android.widget.TextView[@content-desc=\"Views\"]")).click();
+        System.out.println("Swiping Up");
+        WebElement viewList = driver.findElement(AppiumBy.id("android:id/list"));
+        driver.executeScript("mobile: swipeGesture", ImmutableMap.of(
+                "left", 100, "top", 100, "width", 600, "height", 600,
+                "elementId", ((RemoteWebElement) viewList).getId(),
+                "direction", "up",
+                "percent", 0.75
+        ));
+        System.out.println("Swiping down");
+       /* driver.executeScript("mobile: swipeGesture", ImmutableMap.of(
+                "left", 100, "top", 100, "width", 600, "height", 600,
+                "elementId", ((RemoteWebElement) viewList).getId(),
+                "direction", "down",
+                "percent", 0.75
+        ));
+        System.out.println("Swiped down, we are on top of page");
+
+
+    }
+    */
+    @Test (dependsOnMethods = {"verifyPageHeader"})
+    public void swipeLeftRight()
+    {
+        List<WebElement> photos;
+        System.out.println("click on Views");
+        driver.findElement(By.xpath("//android.widget.TextView[@content-desc=\"Views\"]")).click();
+        System.out.println("Click on Gallery");
+        driver.findElement(By.xpath("//android.widget.TextView[@content-desc=\"Gallery\"]")).click();
+        System.out.println("Click on Photo1");
+        driver.findElement(By.xpath("//android.widget.TextView[@content-desc=\"1. Photos\"]")).click();
+        //WebElement phot1 = driver.findElement(AppiumBy.xpath("(//android.widget.ImageView)[1]"));
+
+        System.out.println("Swiping left");
+
+            System.out.println("Swipe to the right");
+            photos = driver.findElements(AppiumBy.xpath("//android.widget.ImageView"));
+        System.out.println("the list size is: " + photos.size());
+            for (int i=0;i<photos.size(); i++)
+            {
+                photos = driver.findElements(AppiumBy.xpath("//android.widget.ImageView"));
+         driver.executeScript("mobile: swipeGesture", ImmutableMap.of(
+                "left", 100, "top", 100, "width", 600, "height", 600,
+                "elementId", ((RemoteWebElement) photos.get(i)).getId(),
+                "direction", "left",
+                "percent", 0.75
+
+        ));
+
+        System.out.println("Swiped to the left");
+
+    }
+    }
+
+
+
 
     @AfterClass
     public void tearDown()
