@@ -25,20 +25,16 @@ public class BrowserSession {
      //   desCap.setCapability("chromedriverExecutable",driverPath);
         URL serverURL = new URL("http://localhost:4723/wd/hub");
         driver = new AndroidDriver(serverURL, desCap);
-
     }
     @Test
     public void testingAmazon()
     {
         driver.get("https://www.amazon.com/");
-
     }
-
     @AfterClass
     public void cleanUp()
     {
         System.out.println("cosing browser");
         driver.quit();
     }
-
 }
