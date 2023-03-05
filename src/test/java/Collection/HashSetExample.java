@@ -46,13 +46,13 @@ public class HashSetExample {
         System.out.println(bucket);
 
         Set<String> Union = new HashSet<String>(fruits);
-        Set<String> Intersection = new HashSet<String>(fruits); //similiar in both list
+        Set<String> Intersection = new HashSet<String>(fruits);
         Set<String> difference = new HashSet<String>(bucket);
 
         Union.addAll(bucket);
         System.out.println("printing union" + Union);
 
-        Intersection.retainAll(bucket);
+        Intersection.retainAll(bucket);//similiar in both list
         System.out.println("printing common objects: "+ Intersection);
 
         difference.removeAll(fruits);
